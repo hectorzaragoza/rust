@@ -26,21 +26,37 @@
 //     println!("using a's clone: {}", a)
 // }
 
+// fn main() {
+//     let s = String::from("book");
+    
+//     // Add code here that calls the pluralize function
+//     let pl = pluralize(s.clone());
+    
+//     println!(
+//         "I have one {}, you have two {}",
+//         s,
+//         pl
+//     );
+// }
+
+// // Add appropriate parameters, return values, and implementation to this function
+// fn pluralize(singular: String) -> String {
+//     singular + "s"
+// }
+
+struct Person {
+    name: String,
+}
+
+fn congratulate(person: &Person) {
+    print!("Congratulations, {}!!!", person.name);
+}
+
 fn main() {
-    let s = String::from("book");
-    
-    // Add code here that calls the pluralize function
-    let pl = pluralize(s.clone());
-    
-    println!(
-        "I have one {}, you have two {}",
-        s,
-        pl
-    );
-}
+    let p = Person {
+        name: String::from("Jake"),
+    };
 
-// Add appropriate parameters, return values, and implementation to this function
-fn pluralize(singular: String) -> String {
-    singular + "s"
+    congratulate(&p);
+    println!("Can still use p here: {}", p.name);
 }
-

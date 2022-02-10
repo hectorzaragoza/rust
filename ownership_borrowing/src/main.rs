@@ -44,19 +44,27 @@
 //     singular + "s"
 // }
 
-struct Person {
-    name: String,
-}
+// BORROWING
+// struct Person {
+//     name: String,
+// }
 
-fn congratulate(person: &Person) {
-    print!("Congratulations, {}!!!", person.name);
-}
+// fn congratulate(person: &Person) {
+//     print!("Congratulations, {}!!!", person.name);
+// }
 
+// fn main() {
+//     let p = Person {
+//         name: String::from("Jake"),
+//     };
+
+//     congratulate(&p);
+//     println!("Can still use p here: {}", p.name);
+// }
+
+// SLICES
 fn main() {
-    let p = Person {
-        name: String::from("Jake"),
-    };
-
-    congratulate(&p);
-    println!("Can still use p here: {}", p.name);
+    let v = vec![10,20,30];
+    let v_slice = &v[..];
+    println!("V_slice is: {:?}", &v_slice);
 }

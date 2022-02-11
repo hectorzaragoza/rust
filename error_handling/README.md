@@ -19,3 +19,19 @@
     - panic if a given condition isn't true.
 
 ### Module 3 - Handling results and options
+- Result and Option types
+- What do you do when you get one of these types returned from a function or method call to either use a successfully produced value or recover in the failure case.
+- Result, enum defined by the std library.
+    - Result has two variants: Ok and Err. One for success, one for failure.
+- Option
+    - Also has two variants: Some or None, have something or having nothing.
+- What to do with OK or Some? You need to get the value out of the success variant to be able to use it. You can store the value in a variable through a match expression.
+- With a failure case, you can use match expression to attempt to recover by taking an action like using a default value or retrying.
+
+### Returning Result and using Question Mark
+- How to return Result values from your own functions that might fail.
+- How to use the ? operator within functions that return Result to propagate errors in a concise way.
+- You can write a function that return the type Result and then account for success and failure case by specifying the types within angle brackets <><>
+- The pattern of extractive a success value and propagating an Err value is so common in Rust that the ? operator was added to have this behavior.
+- Older Rust uses the Try! for the ?
+- The ? operator can only be used in a function that returns the "Result"

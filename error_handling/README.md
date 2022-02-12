@@ -61,4 +61,28 @@
     - trait object
         - consists of a Pointer(Box, that points to data in the heap)
         - Trait (std::error::Error)
-        
+    - From trait is for converting one type into another type
+- Result Type Alias
+
+### Error Handling Crates (these are dependencies you need to add to Cargo.toml)
+- 3 error handling crates examples
+    - quick-error
+    - error-chain
+    - failure
+
+Quick error:
+- provides functionality with a macro. quick_error! macro.
+- Implements Error trait
+- Easier Display and From trait implementations
+
+Error Chain:
+- recommend using the macro within an Errors module.
+
+Failure:
+- procedural macro that lets you derive an implementation for the fail trait.
+
+What are backtraces?
+
+### Useful methods on result and option
+- How to convert between each to the other
+- How to specify fallback value to use in Err and None cases.

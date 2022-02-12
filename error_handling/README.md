@@ -35,3 +35,30 @@
 - The pattern of extractive a success value and propagating an Err value is so common in Rust that the ? operator was added to have this behavior.
 - Older Rust uses the Try! for the ?
 - The ? operator can only be used in a function that returns the "Result"
+
+### Advantages of Rust's Error handling strategy
+- Bugs, fail loudly, fast, and close to the cause.
+- recoverable errors, possibility of errors is clear, compiler forces handling
+
+- Panic, bad state that shouldn't happen no recovery, bugs that a programmer must fix
+- Result, bad state that might happen in normal use, recovery is a possibiliyt, user might be able to fix.
+
+- Rust Compared to C (Buffer Overread, reading past the index of a data structure.)
+    - Fail loudly: Error is obvious from running the program. C is not as clear as to what the issue is.
+    - Fast: Rust program stops once there is an error, C would continue past the error. (leaving room for vulnerability)
+    - Rust fails close to the source. (stops where the issue happens!)
+
+- Disadvantages:
+    - Thinking about potential failures can make the development process a bit slower but quicker development usually has more bugs in production.
+
+### Custom Error Types
+- Box<Error>
+- Error trait
+- From trait
+- Result type alias
+
+- Box<Error>
+    - trait object
+        - consists of a Pointer(Box, that points to data in the heap)
+        - Trait (std::error::Error)
+        

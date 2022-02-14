@@ -18,3 +18,25 @@
 
 ### An exploration of generic lifetimes
 - a generic lifetime is the lifetime of a reference in code, where we cant know all of the possible concrete lifetimes of the values being referenced at compile time.
+- You have to be careful about your values and reference lifetimes to ensure that everything is valid.
+
+### A Short intro to generics
+- Generic type parameters are an abstraction that allow us to write code once that can be used many times with different types.
+- What is the impl keyword?
+
+### Lifetime parameters are a kind of generic
+- purpose of generic lifetime parameters is to tell the compiler how the lifetimes of references are related to check for validity in references.
+- 'a could be used to tell Rust what a return type is referencing..in the example case it could reference either of the parameters of the function by appending each one with the "tick a"
+- Specifying the lifetimes helps prevent bugs by stating in a different way what we intend for the body of the funtion to do. (keeps analysis local, enables errors to be deteced locally rather than caused by usages of the definition that might be far away from the cause of a problem.)
+
+### Lifetime parameters are descriptive, not prescriptive
+- lifetime parameters dont specify how long a concrete lifetime of a value or a reference must be.
+- They dont change the concrete lifetimes of values or references.
+
+### Lifetime elision
+- Elision means omitting or leaving out.
+- unique to rust, so that you dont have to add generic lifetime parameters on every reference.
+- 1st rule. Each parameter thats a reference is considered to have its own lifetime parameter.
+- 2nd rule. If there is only one lifetime in the parameters, a returned reference gets that lifetime.
+- 3rd rule only applies ot methods. It gives return types the same lifetime as the self parameter, even if there are other parameters wtih different lifetimes.
+

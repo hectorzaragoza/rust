@@ -31,3 +31,15 @@ Can store whole unsigned numbers, signed numbers, float numbers.
 - fn main() is the entrypoint for a rust program. (can't have multiple main fn)
 - commands followed by ! are macros.
 - You can explicitly allow code that would spit an error: #![allow(dead_code)], won't report error for variables that are unused. (Keep things a bit quiet)
+
+* Rust does not support the operators -- or ++ but you can do a -=2 or a += 2.
+* There is no === in Rust...just ==
+
+### MEMORY- Stack and Heap
+Imagine a vertical block. Bottom part is the stack. When you bind a variable to a value, it takes a chunk of memory at the stack (bottom - LIFO, Last in, first out.) Stack is also used for functions,as you call a function and all its arguments, you are working on the stack.
+- Stack is fast but size is limited. (Short term storage structure)
+
+- The heap is at the top of the vertical memory block. (Long-term storage structure)
+    - let x = Box: 'new(5); You end up with a reference, pointer.
+    - x would still be in the stack but instead of holding the value in the stack, it has a memory address pointing to the value that lives in the heap.
+    - instead of doing this println!("{}", *x) //The star makes use of the pointer.
